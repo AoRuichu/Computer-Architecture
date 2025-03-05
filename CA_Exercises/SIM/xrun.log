@@ -1,5 +1,5 @@
 xrun(64): 23.03-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.03-s002: Started on Mar 05, 2025 at 09:54:42 CET
+TOOL:	xrun(64)	23.03-s002: Started on Mar 05, 2025 at 10:16:04 CET
 xrun
 	+sv
 	-64bit
@@ -22,9 +22,7 @@ xrun
 	-timescale 1ns/10ps
 	-access +rwc
 	-allowredefinition
-	-linedebug
-	-gui
-xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+xrun: *W,WKWTLK: Waiting for a Exclusive lock on file '/users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/SIM/xcelium.d/run.lnx8664.23.03.d/.xmlib.lock'. pid:24748.
 file: ../Verilog/RTL/alu.v
 	module worklib.alu:v
 		errors: 0, warnings: 0
@@ -77,36 +75,36 @@ file: ../Verilog/sky130_sram_2rw.v
 		cpu_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.branch_unit:v <0x5d05d8fc>
-			streams:   2, words:  1159
-		worklib.alu:v <0x103492e9>
-			streams:   7, words: 11024
-		worklib.alu_control:v <0x31aa427b>
-			streams:   3, words:  3084
-		worklib.control_unit:v <0x5b352062>
-			streams:   1, words: 11724
-		worklib.sky130_sram_2rw_64x128_64:v <0x680db8e8>
-			streams:   4, words:  6070
-		worklib.sky130_sram_2rw_32x128_32:v <0x38cbf6c4>
-			streams:   6, words:  5178
-		worklib.reg_arstn_en:v <0x7d8def18>
-			streams:   5, words:  2171
-		worklib.mux_2:v <0x0f2cdd14>
-			streams:   1, words:   894
-		worklib.pc:v <0x0ae6aa05>
-			streams:   5, words:  2297
-		worklib.immediate_extend_unit:v <0x2c9348a3>
-			streams:   3, words:  4480
-		worklib.cpu_tb:v <0x265b46ab>
-			streams:  27, words: 95808
-		worklib.sram_BW32:v <0x1b3a31f0>
-			streams:  11, words:  7043
-		worklib.sram_BW64:v <0x5c998952>
-			streams:  11, words:  7150
-		worklib.register_file:v <0x7b8d7216>
-			streams:   5, words:  7431
-		worklib.cpu:v <0x48d21f96>
-			streams:   3, words:   581
+		worklib.branch_unit:v <0x30ac35df>
+			streams:   1, words:   596
+		worklib.alu:v <0x20cf6521>
+			streams:   6, words:  5370
+		worklib.alu_control:v <0x347dad44>
+			streams:   3, words:   968
+		worklib.control_unit:v <0x10141ec7>
+			streams:   1, words:  8250
+		worklib.sky130_sram_2rw_64x128_64:v <0x45806777>
+			streams:   4, words:  3138
+		worklib.sky130_sram_2rw_32x128_32:v <0x72da8990>
+			streams:   6, words:  3445
+		worklib.reg_arstn_en:v <0x00581bbc>
+			streams:   3, words:  1151
+		worklib.mux_2:v <0x4e8d3e59>
+			streams:   1, words:   531
+		worklib.pc:v <0x094b6cc4>
+			streams:   5, words:  1642
+		worklib.immediate_extend_unit:v <0x6ad04fbd>
+			streams:   3, words:  3480
+		worklib.cpu_tb:v <0x4dae5e6d>
+			streams:  27, words: 57248
+		worklib.sram_BW32:v <0x09ff9656>
+			streams:  10, words:  4830
+		worklib.sram_BW64:v <0x5279fdd0>
+			streams:  10, words:  4974
+		worklib.register_file:v <0x3d223dae>
+			streams:   5, words: 27845
+		worklib.cpu:v <0x2f73744c>
+			streams:   1, words:   305
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -118,14 +116,39 @@ file: ../Verilog/sky130_sram_2rw.v
 		Vectored wires:          38       -
 		Always blocks:           40      37
 		Initial blocks:           3       3
-		Cont. assignments:        4       4
-		Pseudo assignments:      33       -
+		Cont. assignments:        3       4
+		Pseudo assignments:      29       -
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.cpu_tb:v
-xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
-
--------------------------------------
-Relinquished control to SimVision...
-xcelium> 
+Loading snapshot worklib.cpu_tb:v .................... Done
 xcelium> source /esat/micas-data/software/Cadence/xcelium_23.03/tools/xcelium/files/xmsimrc
-xcelium> 
+xcelium> run
+
+Start Execution
+
+[1;34m
+Working Correctly:                         ADDI(x8)
+[0m
+[1;34m
+Working Correctly:                         ADDI(x9)
+[0m
+[1;34m
+Working Correctly:                               SD
+[0m
+[1;34m
+Working Correctly:                               LD
+[0m
+[1;34m
+Working Correctly:                              ADD
+[0m
+[1;34m
+Working Correctly:                              BEQ
+[0m
+[1;34m
+Working Correctly:                              SLL
+[0m
+          9 cycles
+Simulation complete via $finish(1) at time 29350 NS + 8
+../Verilog/cpu_tb.v:341    $finish;
+xcelium> exit
+TOOL:	xrun(64)	23.03-s002: Exiting on Mar 05, 2025 at 10:16:12 CET  (total: 00:00:08)

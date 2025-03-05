@@ -13,5 +13,3 @@ cpu_tb
 -access
 +rwc
 -allowredefinition
--linedebug
--gui

@@ -8,7 +8,7 @@
 1741156226 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/register_file.v
 1741156226 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/reg_arstn.v
 1741156226 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/alu.v
-1741164833 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/control_unit.v
+1741166095 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/control_unit.v
 1741156226 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/branch_unit.v
 1741156226 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/sky130_sram_2rw.v
 1741156226 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/immediate_extend_unit.v
