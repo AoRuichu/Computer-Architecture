@@ -1,5 +1,5 @@
 xrun(64): 23.03-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.03-s002: Started on Mar 05, 2025 at 10:16:04 CET
+TOOL:	xrun(64)	23.03-s002: Started on Mar 15, 2025 at 21:45:10 CET
 xrun
 	+sv
 	-64bit
@@ -22,52 +22,11 @@ xrun
 	-timescale 1ns/10ps
 	-access +rwc
 	-allowredefinition
-xrun: *W,WKWTLK: Waiting for a Exclusive lock on file '/users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/SIM/xcelium.d/run.lnx8664.23.03.d/.xmlib.lock'. pid:24748.
-file: ../Verilog/RTL/alu.v
-	module worklib.alu:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/alu_control.v
-	module worklib.alu_control:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/branch_unit.v
-	module worklib.branch_unit:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/control_unit.v
-	module worklib.control_unit:v
-		errors: 0, warnings: 0
+Recompiling... reason: file '../Verilog/RTL/cpu.v' is newer than expected.
+	expected: Sat Mar 15 21:43:14 2025
+	actual:   Sat Mar 15 21:45:07 2025
 file: ../Verilog/RTL/cpu.v
 	module worklib.cpu:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/immediate_extend_unit.v
-	module worklib.immediate_extend_unit:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/mux_2.v
-	module worklib.mux_2:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/pc.v
-	module worklib.pc:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/register_file.v
-	module worklib.register_file:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/reg_arstn.v
-	module worklib.reg_arstn:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/reg_arstn_en.v
-	module worklib.reg_arstn_en:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/sram.v
-	module worklib.sram_BW32:v
-		errors: 0, warnings: 0
-	module worklib.sram_BW64:v
-		errors: 0, warnings: 0
-file: ../Verilog/cpu_tb.v
-	module worklib.cpu_tb:v
-		errors: 0, warnings: 0
-file: ../Verilog/sky130_sram_2rw.v
-	module worklib.sky130_sram_2rw_32x128_32:v
-		errors: 0, warnings: 0
-	module worklib.sky130_sram_2rw_64x128_64:v
 		errors: 0, warnings: 0
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
@@ -75,49 +34,34 @@ file: ../Verilog/sky130_sram_2rw.v
 		cpu_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.branch_unit:v <0x30ac35df>
-			streams:   1, words:   596
-		worklib.alu:v <0x20cf6521>
-			streams:   6, words:  5370
-		worklib.alu_control:v <0x347dad44>
-			streams:   3, words:   968
-		worklib.control_unit:v <0x10141ec7>
-			streams:   1, words:  8250
-		worklib.sky130_sram_2rw_64x128_64:v <0x45806777>
-			streams:   4, words:  3138
-		worklib.sky130_sram_2rw_32x128_32:v <0x72da8990>
-			streams:   6, words:  3445
-		worklib.reg_arstn_en:v <0x00581bbc>
-			streams:   3, words:  1151
-		worklib.mux_2:v <0x4e8d3e59>
-			streams:   1, words:   531
-		worklib.pc:v <0x094b6cc4>
-			streams:   5, words:  1642
-		worklib.immediate_extend_unit:v <0x6ad04fbd>
-			streams:   3, words:  3480
-		worklib.cpu_tb:v <0x4dae5e6d>
-			streams:  27, words: 57248
-		worklib.sram_BW32:v <0x09ff9656>
-			streams:  10, words:  4830
-		worklib.sram_BW64:v <0x5279fdd0>
-			streams:  10, words:  4974
-		worklib.register_file:v <0x3d223dae>
-			streams:   5, words: 27845
-		worklib.cpu:v <0x2f73744c>
-			streams:   1, words:   305
+		worklib.alu:v <0x31974ab9>
+			streams:   6, words:  5703
+		worklib.alu_control:v <0x77627927>
+			streams:   3, words:   991
+		worklib.control_unit:v <0x0b8daafe>
+			streams:   1, words:  8194
+		worklib.immediate_extend_unit:v <0x3346336b>
+			streams:   2, words:  3323
+		worklib.cpu_tb:v <0x74d33836>
+			streams:  27, words: 57100
+		worklib.sram_BW32:v <0x0bbea501>
+			streams:  10, words:  4764
+		worklib.register_file:v <0x1a6882e1>
+			streams:   5, words: 27650
+		worklib.cpu:v <0x35b33c14>
+			streams:   2, words:   946
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
 		Modules:                 18      15
-		Registers:              103     100
+		Registers:              104     101
 		Scalar wires:            31       -
-		Expanded wires:          32       1
-		Vectored wires:          38       -
+		Vectored wires:          45       -
 		Always blocks:           40      37
 		Initial blocks:           3       3
-		Cont. assignments:        3       4
-		Pseudo assignments:      29       -
+		Cont. assignments:        2       4
+		Pseudo assignments:      30       -
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.cpu_tb:v
 Loading snapshot worklib.cpu_tb:v .................... Done
@@ -127,28 +71,10 @@ xcelium> run
 Start Execution
 
 [1;34m
-Working Correctly:                         ADDI(x8)
+Mult2 Working Correctly
 [0m
-[1;34m
-Working Correctly:                         ADDI(x9)
-[0m
-[1;34m
-Working Correctly:                               SD
-[0m
-[1;34m
-Working Correctly:                               LD
-[0m
-[1;34m
-Working Correctly:                              ADD
-[0m
-[1;34m
-Working Correctly:                              BEQ
-[0m
-[1;34m
-Working Correctly:                              SLL
-[0m
-          9 cycles
-Simulation complete via $finish(1) at time 29350 NS + 8
+         40 cycles
+Simulation complete via $finish(1) at time 32450 NS + 8
 ../Verilog/cpu_tb.v:341    $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.03-s002: Exiting on Mar 05, 2025 at 10:16:12 CET  (total: 00:00:08)
+TOOL:	xrun(64)	23.03-s002: Exiting on Mar 15, 2025 at 21:45:12 CET  (total: 00:00:02)
