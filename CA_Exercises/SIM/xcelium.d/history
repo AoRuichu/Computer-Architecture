@@ -3,3 +3,5 @@
 // Do not modify this file
 
 s1::(17Mar2025:18:05:40):( xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition )
+s2::(02Apr2025:08:52:01):( xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition )
+s3::(02Apr2025:08:54:13):( xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition )
