@@ -396,4 +396,6 @@ Simulation complete via $finish(1) at time 29450 NS + 8
 ../Verilog/cpu_tb.v:341    $finish;
 xcelium> run
 xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
-xcelium> 
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	23.03-s002: Exiting on Mar 05, 2025 at 10:49:09 CET  (total: 01:45:54)
