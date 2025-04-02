@@ -3,11 +3,12 @@
 // Do not modify this file
 //
 +sv
+-gui
 -MESSAGES
 +EMGRLOG
 xrun.log
 -XLSTIME
-1742231139
+1743586770
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx8664.23.03.d

@@ -1,5 +1,5 @@
 xrun(64): 23.03-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.03-s002: Started on Mar 17, 2025 at 18:05:39 CET
+TOOL:	xrun(64)	23.03-s002: Started on Apr 02, 2025 at 11:39:30 CEST
 xrun
 	+sv
 	-64bit
@@ -22,114 +22,291 @@ xrun
 	-timescale 1ns/10ps
 	-access +rwc
 	-allowredefinition
-file: ../Verilog/RTL/alu.v
-	module worklib.alu:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/alu_control.v
-	module worklib.alu_control:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/branch_unit.v
-	module worklib.branch_unit:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/control_unit.v
-	module worklib.control_unit:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/cpu.v
-	module worklib.cpu:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/immediate_extend_unit.v
-	module worklib.immediate_extend_unit:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/mux_2.v
-	module worklib.mux_2:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/pc.v
-	module worklib.pc:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/register_file.v
-	module worklib.register_file:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/reg_arstn.v
-	module worklib.reg_arstn:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/reg_arstn_en.v
-	module worklib.reg_arstn_en:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/sram.v
-	module worklib.sram_BW32:v
-		errors: 0, warnings: 0
-	module worklib.sram_BW64:v
-		errors: 0, warnings: 0
-file: ../Verilog/cpu_tb.v
-	module worklib.cpu_tb:v
-		errors: 0, warnings: 0
-file: ../Verilog/sky130_sram_2rw.v
-	module worklib.sky130_sram_2rw_32x128_32:v
-		errors: 0, warnings: 0
-	module worklib.sky130_sram_2rw_64x128_64:v
-		errors: 0, warnings: 0
-	Elaborating the design hierarchy:
-		Caching library 'worklib' ....... Done
-	Top level design units:
-		cpu_tb
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.branch_unit:v <0x30ac35df>
-			streams:   1, words:   596
-		worklib.alu:v <0x20cf6521>
-			streams:   6, words:  5370
-		worklib.alu_control:v <0x347dad44>
-			streams:   3, words:   968
-		worklib.control_unit:v <0x10141ec7>
-			streams:   1, words:  8213
-		worklib.sky130_sram_2rw_64x128_64:v <0x45806777>
-			streams:   4, words:  3138
-		worklib.sky130_sram_2rw_32x128_32:v <0x72da8990>
-			streams:   6, words:  3445
-		worklib.reg_arstn_en:v <0x00581bbc>
-			streams:   3, words:  1151
-		worklib.mux_2:v <0x4e8d3e59>
-			streams:   1, words:   531
-		worklib.pc:v <0x094b6cc4>
-			streams:   5, words:  1642
-		worklib.immediate_extend_unit:v <0x6ad04fbd>
-			streams:   3, words:  3480
-		worklib.cpu_tb:v <0x4dae5e6d>
-			streams:  27, words: 57248
-		worklib.sram_BW32:v <0x09ff9656>
-			streams:  10, words:  4830
-		worklib.sram_BW64:v <0x5279fdd0>
-			streams:  10, words:  4974
-		worklib.register_file:v <0x3d223dae>
-			streams:   5, words: 27845
-		worklib.cpu:v <0x2f73744c>
-			streams:   1, words:   305
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		                  Instances  Unique
-		Modules:                 18      15
-		Registers:              103     100
-		Scalar wires:            31       -
-		Expanded wires:          32       1
-		Vectored wires:          38       -
-		Always blocks:           40      37
-		Initial blocks:           3       3
-		Cont. assignments:        3       4
-		Pseudo assignments:      29       -
-		Simulation timescale:  10ps
-	Writing initial simulation snapshot: worklib.cpu_tb:v
-Loading snapshot worklib.cpu_tb:v .................... Done
+	-linedebug
+	-gui
+xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
 xcelium> source /esat/micas-data/software/Cadence/xcelium_23.03/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm cpu_tb.wen_ext cpu_tb.ren_ext
+Created probe 1
 xcelium> run
 
 Start Execution
 
-[1;34m
-Mult1 Working Correctly
+[1;31m
+Error in Mult2 function
 [0m
-       2300 cycles
-Simulation complete via $finish(1) at time 258450 NS + 8
+Debug info, reg_array[          0]: 0000000000000000
+Debug info, reg_array[          1]: 0000000000000000
+Debug info, reg_array[          2]: 0000000000000000
+Debug info, reg_array[          3]: 0000000000000000
+Debug info, reg_array[          4]: 0000000000000000
+Debug info, reg_array[          5]: 0000000000000000
+Debug info, reg_array[          6]: 0000000000000000
+Debug info, reg_array[          7]: 0000000000000000
+Debug info, reg_array[          8]: 0000000000000000
+Debug info, reg_array[          9]: 0000000000000000
+Debug info, reg_array[         10]: 0000000000000000
+Debug info, reg_array[         11]: 0000000000000001
+Debug info, reg_array[         12]: 0000000000000002
+Debug info, reg_array[         13]: 0000000000000003
+Debug info, reg_array[         14]: 0000000000000004
+Debug info, reg_array[         15]: 0000000000000005
+Debug info, reg_array[         16]: 0000000000000006
+Debug info, reg_array[         17]: 0000000000000007
+Debug info, reg_array[         18]: 0000000000000008
+Debug info, reg_array[         19]: 0000000000000009
+Debug info, reg_array[         20]: 000000000000000a
+Debug info, reg_array[         21]: 0000000000000000
+Debug info, reg_array[         22]: 0000000000000001
+Debug info, reg_array[         23]: 0000000000000000
+Debug info, reg_array[         24]: 0000000000000000
+Debug info, reg_array[         25]: 0000000000000000
+Debug info, reg_array[         26]: 0000000000000000
+Debug info, reg_array[         27]: 0000000000000000
+Debug info, reg_array[         28]: 0000000000000000
+Debug info, reg_array[         29]: 0000000000000000
+Debug info, reg_array[         30]: 0000000000000000
+Debug info, reg_array[         31]: 0000000000000000
+         40 cycles
+Simulation complete via $finish(1) at time 32450 NS + 8
 ../Verilog/cpu_tb.v:341    $finish;
-xcelium> exit
-TOOL:	xrun(64)	23.03-s002: Exiting on Mar 17, 2025 at 18:05:40 CET  (total: 00:00:01)
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> probe -create -shm cpu_tb.wdata_ext
+Created probe 2
+xcelium> reset
+Loaded snapshot worklib.cpu_tb:v
+xcelium> run
+
+Start Execution
+
+[1;31m
+Error in Mult2 function
+[0m
+Debug info, reg_array[          0]: 0000000000000000
+Debug info, reg_array[          1]: 0000000000000000
+Debug info, reg_array[          2]: 0000000000000000
+Debug info, reg_array[          3]: 0000000000000000
+Debug info, reg_array[          4]: 0000000000000000
+Debug info, reg_array[          5]: 0000000000000000
+Debug info, reg_array[          6]: 0000000000000000
+Debug info, reg_array[          7]: 0000000000000000
+Debug info, reg_array[          8]: 0000000000000000
+Debug info, reg_array[          9]: 0000000000000000
+Debug info, reg_array[         10]: 0000000000000000
+Debug info, reg_array[         11]: 0000000000000001
+Debug info, reg_array[         12]: 0000000000000002
+Debug info, reg_array[         13]: 0000000000000003
+Debug info, reg_array[         14]: 0000000000000004
+Debug info, reg_array[         15]: 0000000000000005
+Debug info, reg_array[         16]: 0000000000000006
+Debug info, reg_array[         17]: 0000000000000007
+Debug info, reg_array[         18]: 0000000000000008
+Debug info, reg_array[         19]: 0000000000000009
+Debug info, reg_array[         20]: 000000000000000a
+Debug info, reg_array[         21]: 0000000000000000
+Debug info, reg_array[         22]: 0000000000000001
+Debug info, reg_array[         23]: 0000000000000000
+Debug info, reg_array[         24]: 0000000000000000
+Debug info, reg_array[         25]: 0000000000000000
+Debug info, reg_array[         26]: 0000000000000000
+Debug info, reg_array[         27]: 0000000000000000
+Debug info, reg_array[         28]: 0000000000000000
+Debug info, reg_array[         29]: 0000000000000000
+Debug info, reg_array[         30]: 0000000000000000
+Debug info, reg_array[         31]: 0000000000000000
+         40 cycles
+Simulation complete via $finish(1) at time 32450 NS + 8
+../Verilog/cpu_tb.v:341    $finish;
+xcelium> probe -create -shm cpu_tb.debug_regfile.i
+Created probe 3
+xcelium> reset
+Loaded snapshot worklib.cpu_tb:v
+xcelium> run
+
+Start Execution
+
+[1;31m
+Error in Mult2 function
+[0m
+Debug info, reg_array[          0]: 0000000000000000
+Debug info, reg_array[          1]: 0000000000000000
+Debug info, reg_array[          2]: 0000000000000000
+Debug info, reg_array[          3]: 0000000000000000
+Debug info, reg_array[          4]: 0000000000000000
+Debug info, reg_array[          5]: 0000000000000000
+Debug info, reg_array[          6]: 0000000000000000
+Debug info, reg_array[          7]: 0000000000000000
+Debug info, reg_array[          8]: 0000000000000000
+Debug info, reg_array[          9]: 0000000000000000
+Debug info, reg_array[         10]: 0000000000000000
+Debug info, reg_array[         11]: 0000000000000001
+Debug info, reg_array[         12]: 0000000000000002
+Debug info, reg_array[         13]: 0000000000000003
+Debug info, reg_array[         14]: 0000000000000004
+Debug info, reg_array[         15]: 0000000000000005
+Debug info, reg_array[         16]: 0000000000000006
+Debug info, reg_array[         17]: 0000000000000007
+Debug info, reg_array[         18]: 0000000000000008
+Debug info, reg_array[         19]: 0000000000000009
+Debug info, reg_array[         20]: 000000000000000a
+Debug info, reg_array[         21]: 0000000000000000
+Debug info, reg_array[         22]: 0000000000000001
+Debug info, reg_array[         23]: 0000000000000000
+Debug info, reg_array[         24]: 0000000000000000
+Debug info, reg_array[         25]: 0000000000000000
+Debug info, reg_array[         26]: 0000000000000000
+Debug info, reg_array[         27]: 0000000000000000
+Debug info, reg_array[         28]: 0000000000000000
+Debug info, reg_array[         29]: 0000000000000000
+Debug info, reg_array[         30]: 0000000000000000
+Debug info, reg_array[         31]: 0000000000000000
+         40 cycles
+Simulation complete via $finish(1) at time 32450 NS + 8
+../Verilog/cpu_tb.v:341    $finish;
+xcelium> probe -create -shm cpu_tb.dut.r_currentPC cpu_tb.dut.r_currentPC2
+Created probe 4
+xcelium> reset
+Loaded snapshot worklib.cpu_tb:v
+xcelium> run
+
+Start Execution
+
+[1;31m
+Error in Mult2 function
+[0m
+Debug info, reg_array[          0]: 0000000000000000
+Debug info, reg_array[          1]: 0000000000000000
+Debug info, reg_array[          2]: 0000000000000000
+Debug info, reg_array[          3]: 0000000000000000
+Debug info, reg_array[          4]: 0000000000000000
+Debug info, reg_array[          5]: 0000000000000000
+Debug info, reg_array[          6]: 0000000000000000
+Debug info, reg_array[          7]: 0000000000000000
+Debug info, reg_array[          8]: 0000000000000000
+Debug info, reg_array[          9]: 0000000000000000
+Debug info, reg_array[         10]: 0000000000000000
+Debug info, reg_array[         11]: 0000000000000001
+Debug info, reg_array[         12]: 0000000000000002
+Debug info, reg_array[         13]: 0000000000000003
+Debug info, reg_array[         14]: 0000000000000004
+Debug info, reg_array[         15]: 0000000000000005
+Debug info, reg_array[         16]: 0000000000000006
+Debug info, reg_array[         17]: 0000000000000007
+Debug info, reg_array[         18]: 0000000000000008
+Debug info, reg_array[         19]: 0000000000000009
+Debug info, reg_array[         20]: 000000000000000a
+Debug info, reg_array[         21]: 0000000000000000
+Debug info, reg_array[         22]: 0000000000000001
+Debug info, reg_array[         23]: 0000000000000000
+Debug info, reg_array[         24]: 0000000000000000
+Debug info, reg_array[         25]: 0000000000000000
+Debug info, reg_array[         26]: 0000000000000000
+Debug info, reg_array[         27]: 0000000000000000
+Debug info, reg_array[         28]: 0000000000000000
+Debug info, reg_array[         29]: 0000000000000000
+Debug info, reg_array[         30]: 0000000000000000
+Debug info, reg_array[         31]: 0000000000000000
+         40 cycles
+Simulation complete via $finish(1) at time 32450 NS + 8
+../Verilog/cpu_tb.v:341    $finish;
+xcelium> probe -create -shm cpu_tb.dut.regfile_rdata_1 cpu_tb.dut.regfile_rdata_2 cpu_tb.dut.regfile_waddr cpu_tb.dut.regfile_wdata
+Created probe 5
+xcelium> reset
+Loaded snapshot worklib.cpu_tb:v
+xcelium> run
+
+Start Execution
+
+[1;31m
+Error in Mult2 function
+[0m
+Debug info, reg_array[          0]: 0000000000000000
+Debug info, reg_array[          1]: 0000000000000000
+Debug info, reg_array[          2]: 0000000000000000
+Debug info, reg_array[          3]: 0000000000000000
+Debug info, reg_array[          4]: 0000000000000000
+Debug info, reg_array[          5]: 0000000000000000
+Debug info, reg_array[          6]: 0000000000000000
+Debug info, reg_array[          7]: 0000000000000000
+Debug info, reg_array[          8]: 0000000000000000
+Debug info, reg_array[          9]: 0000000000000000
+Debug info, reg_array[         10]: 0000000000000000
+Debug info, reg_array[         11]: 0000000000000001
+Debug info, reg_array[         12]: 0000000000000002
+Debug info, reg_array[         13]: 0000000000000003
+Debug info, reg_array[         14]: 0000000000000004
+Debug info, reg_array[         15]: 0000000000000005
+Debug info, reg_array[         16]: 0000000000000006
+Debug info, reg_array[         17]: 0000000000000007
+Debug info, reg_array[         18]: 0000000000000008
+Debug info, reg_array[         19]: 0000000000000009
+Debug info, reg_array[         20]: 000000000000000a
+Debug info, reg_array[         21]: 0000000000000000
+Debug info, reg_array[         22]: 0000000000000001
+Debug info, reg_array[         23]: 0000000000000000
+Debug info, reg_array[         24]: 0000000000000000
+Debug info, reg_array[         25]: 0000000000000000
+Debug info, reg_array[         26]: 0000000000000000
+Debug info, reg_array[         27]: 0000000000000000
+Debug info, reg_array[         28]: 0000000000000000
+Debug info, reg_array[         29]: 0000000000000000
+Debug info, reg_array[         30]: 0000000000000000
+Debug info, reg_array[         31]: 0000000000000000
+         40 cycles
+Simulation complete via $finish(1) at time 32450 NS + 8
+../Verilog/cpu_tb.v:341    $finish;
+xcelium> probe -create -shm cpu_tb.dut.register_file.reg_array
+Created probe 6
+xcelium> reset
+Loaded snapshot worklib.cpu_tb:v
+xcelium> run
+
+Start Execution
+
+[1;31m
+Error in Mult2 function
+[0m
+Debug info, reg_array[          0]: 0000000000000000
+Debug info, reg_array[          1]: 0000000000000000
+Debug info, reg_array[          2]: 0000000000000000
+Debug info, reg_array[          3]: 0000000000000000
+Debug info, reg_array[          4]: 0000000000000000
+Debug info, reg_array[          5]: 0000000000000000
+Debug info, reg_array[          6]: 0000000000000000
+Debug info, reg_array[          7]: 0000000000000000
+Debug info, reg_array[          8]: 0000000000000000
+Debug info, reg_array[          9]: 0000000000000000
+Debug info, reg_array[         10]: 0000000000000000
+Debug info, reg_array[         11]: 0000000000000001
+Debug info, reg_array[         12]: 0000000000000002
+Debug info, reg_array[         13]: 0000000000000003
+Debug info, reg_array[         14]: 0000000000000004
+Debug info, reg_array[         15]: 0000000000000005
+Debug info, reg_array[         16]: 0000000000000006
+Debug info, reg_array[         17]: 0000000000000007
+Debug info, reg_array[         18]: 0000000000000008
+Debug info, reg_array[         19]: 0000000000000009
+Debug info, reg_array[         20]: 000000000000000a
+Debug info, reg_array[         21]: 0000000000000000
+Debug info, reg_array[         22]: 0000000000000001
+Debug info, reg_array[         23]: 0000000000000000
+Debug info, reg_array[         24]: 0000000000000000
+Debug info, reg_array[         25]: 0000000000000000
+Debug info, reg_array[         26]: 0000000000000000
+Debug info, reg_array[         27]: 0000000000000000
+Debug info, reg_array[         28]: 0000000000000000
+Debug info, reg_array[         29]: 0000000000000000
+Debug info, reg_array[         30]: 0000000000000000
+Debug info, reg_array[         31]: 0000000000000000
+         40 cycles
+Simulation complete via $finish(1) at time 32450 NS + 8
+../Verilog/cpu_tb.v:341    $finish;
+xcelium> 
