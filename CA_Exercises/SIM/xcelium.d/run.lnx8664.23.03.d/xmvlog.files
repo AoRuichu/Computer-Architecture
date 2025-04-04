@@ -9,6 +9,8 @@
 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/cpu.v
 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/immediate_extend_unit.v
 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/mux_2.v
+/users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/mux_3.v
+/users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/foward_unit.v
 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/pc.v
 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/register_file.v
 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/reg_arstn.v

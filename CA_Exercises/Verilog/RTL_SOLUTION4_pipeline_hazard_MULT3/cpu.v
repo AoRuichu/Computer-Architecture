@@ -54,15 +54,20 @@ wire              reg_dst,
                   alu_src,alu_src_ID_EX, 
                   reg_write, reg_write_ID_EX, reg_write_MEM_WB,
                   jump,jump_ID_EX,jump_EX_MEM;
-wire [       4:0] regfile_waddr,regfile_waddr_ID_EX,regfile_waddr_EX_MEM,regfile_waddr_MEM_WB;
+wire [       4:0] regfile_waddr,regfile_waddr_ID_EX,
+                  regfile_waddr_EX_MEM,regfile_waddr_MEM_WB,
+                  rds1_ID_EX,rds2_ID_EX;
 wire [      63:0] regfile_wdata_MEM_WB,
                   mem_data,mem_data_MEM_WB,
                   alu_out, alu_out_EX_MEM, alu_out_MEM_WB,
                   regfile_rdata_1,regfile_rdata_1_ID_EX,
                   regfile_rdata_2,regfile_rdata_2_EX_MEM,regfile_rdata_2_ID_EX,
+                  operand_A,operand_B,
                   alu_operand_2;
 wire [       6:0] func7_ID_EX;
 wire [       2:0] func3_ID_EX;
+wire [       1:0] forward_A;
+wire [       1:0] forward_B;
 
 wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
 
@@ -321,6 +326,26 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       .dout    (func3_ID_EX)
    );
 
+      reg_arstn_en#(
+      .DATA_W(5)
+      )rds1_pipe_ID_EX(
+      .clk     (clk),
+      .arst_n  (arst_n),
+      .din     (instruction_IF_ID[19:15]),
+      .en      (enable),
+      .dout    (rds1_ID_EX)
+   );
+
+      reg_arstn_en#(
+      .DATA_W(5)
+      )rds2_pipe_ID_EX(
+      .clk     (clk),
+      .arst_n  (arst_n),
+      .din     (instruction_IF_ID[24:20]),
+      .en      (enable),
+      .dout    (rds2_ID_EX)
+   );
+
 // ID_EX REG END ----------------------------------
 
 // EX STAGE BEGIN ==================================
@@ -331,39 +356,73 @@ alu_control alu_ctrl(
    .alu_control    (alu_control       )
 );
 
+
+// Operand A
+mux_3 #(
+   .DATA_W 	(64 ))
+u_mux_3_A(
+   .input_ID_EX  	   (regfile_rdata_1_ID_EX   ),
+   .input_EX_MEM  	(alu_out_EX_MEM   ),
+   .input_MEM_WB  	(regfile_wdata_MEM_WB),
+   .select_a 	(forward_A  ),
+   .mux_out  	(operand_A  )
+);
+
+// Operand B
+mux_3 #(
+   .DATA_W 	(64  ))
+u_mux_3_B(
+   .input_ID_EX   	(alu_operand_2   ),
+   .input_EX_MEM  	(alu_out_EX_MEM   ),
+   .input_MEM_WB  	(regfile_wdata_MEM_WB ),
+   .select_a 	(forward_B  ),
+   .mux_out  	(operand_B  )
+);
+
+
+
 alu#(
    .DATA_W(64)
 ) alu(
-   .alu_in_0 (regfile_rdata_1_ID_EX ),
-   .alu_in_1 (alu_operand_2   ),
-   .alu_ctrl (alu_control     ),
-   .alu_out  (alu_out         ),
-   .zero_flag(zero_flag       ),
-   .overflow (                )
+   .alu_in_0 (operand_A ),
+   .alu_in_1 (operand_B ),
+   .alu_ctrl (alu_control  ),
+   .alu_out  (alu_out      ),
+   .zero_flag(zero_flag    ),
+   .overflow (             )
 );
 
 mux_2 #(
    .DATA_W(64)
 ) alu_operand_mux (
    .input_a (immediate_extended_ID_EX),
-   .input_b (regfile_rdata_2_ID_EX    ),
-   .select_a(alu_src_ID_EX           ),
-   .mux_out (alu_operand_2     )
+   .input_b (regfile_rdata_2_ID_EX   ),
+   .select_a(alu_src_ID_EX  ),
+   .mux_out (alu_operand_2  )
 );
 
 branch_unit#(
    .DATA_W(64)
 )branch_unit(
-   .current_pc         (current_pc_ID_EX  ),
+   .current_pc         (current_pc_ID_EX        ),
    .immediate_extended (immediate_extended_ID_EX),
-   .branch_pc          (branch_pc         ),
-   .jump_pc            (jump_pc           )
+   .branch_pc          (branch_pc               ),
+   .jump_pc            (jump_pc                 )
 );
 
-
+foward_unit u_foward_unit(
+   .ID_EX_Rs1        	(rds1_ID_EX           ),
+   .ID_EX_Rs2        	(rds2_ID_EX           ),
+   .EX_MEM_reg_write 	(reg_write_EX_MEM     ),
+   .EX_MEM_Rd        	(regfile_waddr_EX_MEM ),
+   .MEM_WB_reg_write 	(reg_write_MEM_WB     ),
+   .MEM_WB_Rd        	(regfile_waddr_MEM_WB ),
+   .ALU_src             (alu_src_ID_EX        ),
+   .Forward_A        	(forward_A            ),
+   .Forward_B        	(forward_B            )
+);
 
 // EX STAGE END ---------------------------------------
-
 // EX_MEM REG BEGIN ======================================
 
    //branch

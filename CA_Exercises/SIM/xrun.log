@@ -1,5 +1,5 @@
 xrun(64): 23.03-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.03-s002: Started on Apr 02, 2025 at 14:21:23 CEST
+TOOL:	xrun(64)	23.03-s002: Started on Apr 04, 2025 at 15:23:04 CEST
 xrun
 	+sv
 	-64bit
@@ -11,6 +11,8 @@ xrun
 		../Verilog/RTL/cpu.v
 		../Verilog/RTL/immediate_extend_unit.v
 		../Verilog/RTL/mux_2.v
+		../Verilog/RTL/mux_3.v
+		../Verilog/RTL/foward_unit.v
 		../Verilog/RTL/pc.v
 		../Verilog/RTL/register_file.v
 		../Verilog/RTL/reg_arstn.v
@@ -22,9 +24,6 @@ xrun
 	-timescale 1ns/10ps
 	-access +rwc
 	-allowredefinition
-	-linedebug
-	-gui
-xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
 file: ../Verilog/RTL/alu.v
 	module worklib.alu:v
 		errors: 0, warnings: 0
@@ -46,6 +45,15 @@ file: ../Verilog/RTL/immediate_extend_unit.v
 file: ../Verilog/RTL/mux_2.v
 	module worklib.mux_2:v
 		errors: 0, warnings: 0
+file: ../Verilog/RTL/mux_3.v
+	module worklib.mux_3:v
+		errors: 0, warnings: 0
+file: ../Verilog/RTL/foward_unit.v
+	module worklib.foward_unit:v
+		errors: 0, warnings: 0
+endmodule;
+         |
+xmvlog: *W,UEXPSC (../Verilog/RTL/foward_unit.v,45|9): Ignored unexpected semicolon following SystemVerilog description keyword (endmodule).
 file: ../Verilog/RTL/pc.v
 	module worklib.pc:v
 		errors: 0, warnings: 0
@@ -71,86 +79,85 @@ file: ../Verilog/sky130_sram_2rw.v
 		errors: 0, warnings: 0
 	module worklib.sky130_sram_2rw_64x128_64:v
 		errors: 0, warnings: 0
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
 	Top level design units:
 		cpu_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.sky130_sram_2rw_64x128_64:v <0x680db8e8>
-			streams:   4, words:  6070
-		worklib.branch_unit:v <0x5d05d8fc>
-			streams:   2, words:  1159
-		worklib.alu:v <0x1f4da05c>
-			streams:   7, words: 11906
-		worklib.alu_control:v <0x4b0341cb>
-			streams:   3, words:  3253
-		worklib.reg_arstn_en:v <0x3610b2a4>
-			streams:   5, words:  1862
-		worklib.reg_arstn_en:v <0x77e19283>
-			streams:   5, words:  1862
-		worklib.reg_arstn_en:v <0x4b473122>
-			streams:   5, words:  1862
-		worklib.reg_arstn_en:v <0x1be7900a>
-			streams:   5, words:  1862
-		worklib.reg_arstn_en:v <0x4960e93a>
-			streams:   5, words:  1870
-		worklib.immediate_extend_unit:v <0x75053475>
-			streams:   3, words:  4351
-		worklib.control_unit:v <0x40ac945b>
-			streams:   1, words: 11671
-		worklib.reg_arstn_en:v <0x51622825>
-			streams:   5, words:  1850
-		worklib.sky130_sram_2rw_32x128_32:v <0x38cbf6c4>
-			streams:   6, words:  5178
-		worklib.reg_arstn_en:v <0x46d85499>
-			streams:   5, words:  2171
-		worklib.mux_2:v <0x0f2cdd14>
-			streams:   1, words:   894
-		worklib.pc:v <0x160a3fe5>
-			streams:   5, words:  2297
-		worklib.cpu_tb:v <0x4bf4b95b>
-			streams:  27, words: 95617
-		worklib.sram_BW32:v <0x1c071b9f>
-			streams:  11, words:  6879
-		worklib.sram_BW64:v <0x5c998952>
-			streams:  11, words:  7150
-		worklib.register_file:v <0x5cc7cd59>
-			streams:   5, words:  7240
-		worklib.cpu:v <0x62da4db9>
-			streams:   9, words:  1648
+		worklib.sky130_sram_2rw_64x128_64:v <0x45806777>
+			streams:   4, words:  3138
+		worklib.foward_unit:v <0x65b26b2a>
+			streams:   1, words:  1603
+		worklib.branch_unit:v <0x30ac35df>
+			streams:   1, words:   596
+		worklib.alu:v <0x31974ab9>
+			streams:   6, words:  5703
+		worklib.mux_3:v <0x4e7bc06c>
+			streams:   1, words:   808
+		worklib.alu_control:v <0x77627927>
+			streams:   3, words:   991
+		worklib.reg_arstn_en:v <0x4bc54600>
+			streams:   3, words:   823
+		worklib.reg_arstn_en:v <0x0a346627>
+			streams:   3, words:   823
+		worklib.reg_arstn_en:v <0x3692c586>
+			streams:   3, words:   823
+		worklib.reg_arstn_en:v <0x663264ae>
+			streams:   3, words:   823
+		worklib.reg_arstn_en:v <0x34b51d9e>
+			streams:   3, words:   844
+		worklib.immediate_extend_unit:v <0x3346336b>
+			streams:   2, words:  3323
+		worklib.control_unit:v <0x0b8daafe>
+			streams:   1, words:  8157
+		worklib.reg_arstn_en:v <0x2cb7dc81>
+			streams:   3, words:   810
+		worklib.sky130_sram_2rw_32x128_32:v <0x72da8990>
+			streams:   6, words:  3445
+		worklib.reg_arstn_en:v <0x3b0da03d>
+			streams:   3, words:  1151
+		worklib.mux_2:v <0x4e8d3e59>
+			streams:   1, words:   531
+		worklib.pc:v <0x15a7f924>
+			streams:   5, words:  1642
+		worklib.cpu_tb:v <0x45dec2a3>
+			streams:  27, words: 57100
+		worklib.sram_BW32:v <0x0bbea501>
+			streams:  10, words:  4764
+		worklib.sram_BW64:v <0x5279fdd0>
+			streams:  10, words:  4974
+		worklib.register_file:v <0x1a6882e1>
+			streams:   5, words: 27650
+		worklib.cpu:v <0x1fca344e>
+			streams:   2, words:  1158
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
-		Modules:                 52      15
-		Registers:              172     101
+		Modules:                 57      17
+		Registers:              180     104
 		Scalar wires:            47       -
-		Vectored wires:          64       -
-		Always blocks:          108      37
+		Vectored wires:          72       -
+		Always blocks:          115      39
 		Initial blocks:           3       3
-		Cont. assignments:       38       4
-		Pseudo assignments:      39       -
+		Cont. assignments:        2       4
+		Pseudo assignments:      30       -
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.cpu_tb:v
-xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
-
--------------------------------------
-Relinquished control to SimVision...
-xcelium> 
+Loading snapshot worklib.cpu_tb:v .................... Done
 xcelium> source /esat/micas-data/software/Cadence/xcelium_23.03/tools/xcelium/files/xmsimrc
-xcelium> database -open waves -into waves.shm -default
-Created default SHM database waves
-xcelium> probe -create -shm cpu_tb.dut.register_file.reg_array
-Created probe 1
 xcelium> run
 
 Start Execution
 
 [1;34m
-Mult2 Working Correctly
+Mult3 Working Correctly
 [0m
-         40 cycles
-Simulation complete via $finish(1) at time 32450 NS + 8
+         25 cycles
+Simulation complete via $finish(1) at time 30950 NS + 8
 ../Verilog/cpu_tb.v:341    $finish;
-xcelium> 
+xcelium> exit
+TOOL:	xrun(64)	23.03-s002: Exiting on Apr 04, 2025 at 15:23:05 CEST  (total: 00:00:01)
