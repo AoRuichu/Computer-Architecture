@@ -2,7 +2,7 @@
 1743582013 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/alu_control.v
 1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/branch_unit.v
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/control_unit.v
-1743586573 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/cpu.v
+1743591689 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/cpu.v
 1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/immediate_extend_unit.v
 1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/mux_2.v
 1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/pc.v

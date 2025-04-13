@@ -20,7 +20,7 @@
 1742229207 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/register_file.v
 1742229207 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/reg_arstn.v
 1742229206 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/alu.v
-1743586573 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/cpu.v
+1743591689 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/cpu.v
 1743582013 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/alu_control.v
 1742230686 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/control_unit.v
 1742229207 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/branch_unit.v

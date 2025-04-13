@@ -50,7 +50,7 @@ wire [      63:0] regfile_wdata,mem_data,alu_out,
                   regfile_rdata_1,regfile_rdata_2,
                   alu_operand_2;
 
-
+         reg [4:0]r_instruction4;
 
 pc #(
    .DATA_W(64)
@@ -130,7 +130,7 @@ register_file #(
    .reg_write(reg_write         ),
    .raddr_1  (r_instruction[19:15]),
    .raddr_2  (r_instruction[24:20]),
-   .waddr    (r_instruction[11:7] ),
+   .waddr    (r_instruction4 ),
    .wdata    (regfile_wdata     ),
    .rdata_1  (regfile_rdata_1   ),
    .rdata_2  (regfile_rdata_2   )
@@ -383,6 +383,18 @@ reg_arstn_en#(
       .din   (r_control_unit2),
       .en    (enable    ),
       .dout  (r_control_unit3 )
+   );
+
+
+
+reg_arstn_en#(
+.DATA_W(5)
+) signal_pipe_MEM_WB_instruction(
+      .clk   (clk       ),
+      .arst_n(arst_n    ),
+      .din   (r_instruction3),
+      .en    (enable    ),
+      .dout  (r_instruction4 )
    );
 // //stage 4 ends//////////////////////////////////////
    // stage 5 following//////////////////////////////////
