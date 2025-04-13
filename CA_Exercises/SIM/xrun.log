@@ -1,5 +1,5 @@
 xrun(64): 23.03-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.03-s002: Started on Apr 04, 2025 at 15:23:04 CEST
+TOOL:	xrun(64)	23.03-s002: Started on Apr 13, 2025 at 19:57:15 CEST
 xrun
 	+sv
 	-64bit
@@ -20,10 +20,12 @@ xrun
 		../Verilog/RTL/sram.v
 		../Verilog/cpu_tb.v
 		../Verilog/sky130_sram_2rw.v
+		../Verilog/RTL/harzard_detect_unit.v
 	-top cpu_tb
 	-timescale 1ns/10ps
 	-access +rwc
 	-allowredefinition
+xrun: *W,WKWTLK: Waiting for a Exclusive lock on file '/users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/SIM/xcelium.d/run.lnx8664.23.03.d/.xmlib.lock'. pid:98152.
 file: ../Verilog/RTL/alu.v
 	module worklib.alu:v
 		errors: 0, warnings: 0
@@ -79,6 +81,9 @@ file: ../Verilog/sky130_sram_2rw.v
 		errors: 0, warnings: 0
 	module worklib.sky130_sram_2rw_64x128_64:v
 		errors: 0, warnings: 0
+file: ../Verilog/RTL/harzard_detect_unit.v
+	module worklib.harzard_detect_unit:v
+		errors: 0, warnings: 0
 	Total errors/warnings found outside modules and primitives:
 		errors: 0, warnings: 1
 	Elaborating the design hierarchy:
@@ -109,10 +114,14 @@ file: ../Verilog/sky130_sram_2rw.v
 			streams:   3, words:   823
 		worklib.reg_arstn_en:v <0x34b51d9e>
 			streams:   3, words:   844
+		worklib.harzard_detect_unit:v <0x39d54a16>
+			streams:   1, words:  1041
 		worklib.immediate_extend_unit:v <0x3346336b>
 			streams:   2, words:  3323
-		worklib.control_unit:v <0x0b8daafe>
-			streams:   1, words:  8157
+		worklib.mux_2:v <0x01542804>
+			streams:   1, words:   383
+		worklib.control_unit:v <0x361926fd>
+			streams:   1, words:  9053
 		worklib.reg_arstn_en:v <0x2cb7dc81>
 			streams:   3, words:   810
 		worklib.sky130_sram_2rw_32x128_32:v <0x72da8990>
@@ -123,28 +132,28 @@ file: ../Verilog/sky130_sram_2rw.v
 			streams:   1, words:   531
 		worklib.pc:v <0x15a7f924>
 			streams:   5, words:  1642
-		worklib.cpu_tb:v <0x45dec2a3>
+		worklib.cpu_tb:v <0x4bb12046>
 			streams:  27, words: 57100
 		worklib.sram_BW32:v <0x0bbea501>
 			streams:  10, words:  4764
 		worklib.sram_BW64:v <0x5279fdd0>
 			streams:  10, words:  4974
-		worklib.register_file:v <0x1a6882e1>
-			streams:   5, words: 27650
-		worklib.cpu:v <0x1fca344e>
-			streams:   2, words:  1158
+		worklib.register_file:v <0x40ab41df>
+			streams:   5, words: 28223
+		worklib.cpu:v <0x33548c4d>
+			streams:   8, words:  3678
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
-		Modules:                 57      17
-		Registers:              180     104
-		Scalar wires:            47       -
-		Vectored wires:          72       -
-		Always blocks:          115      39
+		Modules:                 59      18
+		Registers:              186     109
+		Scalar wires:            60       -
+		Vectored wires:          78       -
+		Always blocks:          118      41
 		Initial blocks:           3       3
 		Cont. assignments:        2       4
-		Pseudo assignments:      30       -
+		Pseudo assignments:      35       -
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.cpu_tb:v
 Loading snapshot worklib.cpu_tb:v .................... Done
@@ -154,10 +163,10 @@ xcelium> run
 Start Execution
 
 [1;34m
-Mult3 Working Correctly
+Mult4 Working Correctly
 [0m
-         25 cycles
-Simulation complete via $finish(1) at time 30950 NS + 8
+       2434 cycles
+Simulation complete via $finish(1) at time 279260 NS + 0
 ../Verilog/cpu_tb.v:341    $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.03-s002: Exiting on Apr 04, 2025 at 15:23:05 CEST  (total: 00:00:01)
+TOOL:	xrun(64)	23.03-s002: Exiting on Apr 13, 2025 at 19:57:38 CEST  (total: 00:00:23)

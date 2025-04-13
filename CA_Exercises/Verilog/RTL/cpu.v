@@ -18,8 +18,6 @@
 //	rdata_ext: Read data from Instruction Memory
 //	rdata_ext_2: Read data from Data Memory
 
-
-
 module cpu(
 		input  wire			  clk,
 		input  wire         arst_n,
@@ -43,7 +41,7 @@ wire [      63:0] branch_pc,branch_pc_EX_MEM,
                   updated_pc,
                   current_pc,current_pc_IF_ID, current_pc_ID_EX,
                   jump_pc,jump_pc_EX_MEM;
-wire [      31:0] instruction, instruction_IF_ID, instruction_MEM_WB;
+wire [      31:0] instruction, instruction_IF_ID;
 wire [       1:0] alu_op,alu_op_ID_EX;
 wire [       3:0] alu_control;
 wire              reg_dst,
@@ -53,7 +51,8 @@ wire              reg_dst,
                   mem_write,mem_write_ID_EX,mem_write_EX_MEM,
                   alu_src,alu_src_ID_EX, 
                   reg_write, reg_write_ID_EX, reg_write_MEM_WB,
-                  jump,jump_ID_EX,jump_EX_MEM;
+                  jump,jump_ID_EX,jump_EX_MEM,
+                  PC_write,IF_ID_write,control_write;
 wire [       4:0] regfile_waddr,regfile_waddr_ID_EX,
                   regfile_waddr_EX_MEM,regfile_waddr_MEM_WB,
                   rds1_ID_EX,rds2_ID_EX;
@@ -64,6 +63,7 @@ wire [      63:0] regfile_wdata_MEM_WB,
                   regfile_rdata_2,regfile_rdata_2_EX_MEM,regfile_rdata_2_ID_EX,
                   operand_A,operand_B,
                   alu_operand_2;
+reg  [       9:0] mux_2_input,control_output;
 wire [       6:0] func7_ID_EX;
 wire [       2:0] func3_ID_EX;
 wire [       1:0] forward_A;
@@ -79,15 +79,16 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       .arst_n    (arst_n    ),
       .branch_pc (branch_pc_EX_MEM ),
       .jump_pc   (jump_pc_EX_MEM   ),
-      .zero_flag (zero_flag ),
-      .branch    (branch    ),
-      .jump      (jump      ),
+      .zero_flag (zero_flag_EX_MEM ),
+      .branch    (branch_EX_MEM    ),
+      .jump      (jump_EX_MEM      ),
       .current_pc(current_pc),
-      .enable    (enable    ),
+      .enable    (enable&&PC_write ),
       .updated_pc(updated_pc)
    );
 
-      sram_BW32 #(
+
+   sram_BW32 #(
       .ADDR_W(9 )
    ) instruction_memory(
       .clk      (clk           ),
@@ -113,7 +114,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       .clk     (clk),
       .arst_n  (arst_n),
       .din     (instruction),
-      .en      (enable),
+      .en      (enable&&IF_ID_write),
       .dout    (instruction_IF_ID)
    );
 
@@ -124,7 +125,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       .clk     (clk),
       .arst_n  (arst_n),
       .din     (current_pc),
-      .en      (enable),
+      .en      (enable&&IF_ID_write),
       .dout    (current_pc_IF_ID)
    );
 
@@ -146,22 +147,49 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
    );
 
    control_unit control_unit(
-      .opcode   (instruction_IF_ID[6:0]),
-      .alu_op   (alu_op          ),
-      .reg_dst  (reg_dst         ),
-      .branch   (branch          ),
-      .mem_read (mem_read        ),
-      .mem_2_reg(mem_2_reg       ),
-      .mem_write(mem_write       ),
-      .alu_src  (alu_src         ),
-      .reg_write(reg_write       ),
-      .jump     (jump            )
+      .opcode        (instruction_IF_ID[6:0]),
+      .alu_op        (alu_op          ),
+      .reg_dst       (reg_dst         ),
+      .branch        (branch          ),
+      .mem_read      (mem_read        ),
+      .mem_2_reg     (mem_2_reg       ),
+      .mem_write     (mem_write       ),
+      .alu_src       (alu_src         ),
+      .reg_write     (reg_write       ),
+      .jump          (jump            )
    );
 
+   
+   always @(*) begin
+      mux_2_input = {alu_op,reg_dst,branch,mem_read,mem_2_reg,mem_write,alu_src,reg_write,jump};
+   end
+   
+
+   mux_2 #(
+      .DATA_W 	(10  ))
+   u_mux_2(
+      .input_a  	(mux_2_input  ),
+      .input_b  	(10'b00000_00000   ),
+      .select_a 	(control_write  ),
+      .mux_out  	(control_output   )
+   );
+   
+   
    immediate_extend_unit immediate_extend_u(
       .instruction         (instruction_IF_ID),
       .immediate_extended  (immediate_extended)
    );
+
+   harzard_detect_unit harzard_detect_unit_u(
+      .IF_ID_Rs1      (instruction_IF_ID[19:15]),
+      .IF_ID_Rs2      (instruction_IF_ID[24:20]),
+      .ID_EX_Rd       (regfile_waddr_ID_EX),
+      .ID_EX_mem_read (mem_read_ID_EX),
+      .PC_write       (PC_write),
+      .IF_ID_write    (IF_ID_write),
+      .control_write  (control_write)
+   );
+   
 
 // ID STAGE END -------------------------------
 
@@ -175,7 +203,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       )alu_src_pipe_ID_EX(
          .clk     (clk),
          .arst_n  (arst_n),
-         .din     (alu_src),
+         .din     (control_output[2]),
          .en      (enable),
          .dout    (alu_src_ID_EX)
       );
@@ -185,7 +213,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       )alu_op_pipe_ID_EX(
          .clk     (clk),
          .arst_n  (arst_n),
-         .din     (alu_op),
+         .din     (control_output[9:8]),
          .en      (enable),
          .dout    (alu_op_ID_EX)
       );
@@ -196,7 +224,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       )mem_2_reg_pipe_ID_EX(
          .clk     (clk),
          .arst_n  (arst_n),
-         .din     (mem_2_reg),
+         .din     (control_output[4]),
          .en      (enable),
          .dout    (mem_2_reg_ID_EX)
       );
@@ -206,7 +234,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       )reg_write_pipe_ID_EX(
          .clk     (clk),
          .arst_n  (arst_n),
-         .din     (reg_write),
+         .din     (control_output[1]),
          .en      (enable),
          .dout    (reg_write_ID_EX)
       );
@@ -216,7 +244,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       )branch_pipe_ID_EX(
          .clk     (clk),
          .arst_n  (arst_n),
-         .din     (branch),
+         .din     (control_output[6]),
          .en      (enable),
          .dout    (branch_ID_EX)
       );
@@ -226,7 +254,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       )jump_pipe_ID_EX(
          .clk     (clk),
          .arst_n  (arst_n),
-         .din     (jump),
+         .din     (control_output[0]),
          .en      (enable),
          .dout    (jump_ID_EX)
       );
@@ -238,7 +266,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       )mem_read_pipe_ID_EX(
          .clk     (clk),
          .arst_n  (arst_n),
-         .din     (mem_read),
+         .din     (control_output[5]),
          .en      (enable),
          .dout    (mem_read_ID_EX)
       );
@@ -247,7 +275,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       )mem_write_pipe_ID_EX(
          .clk     (clk),
          .arst_n  (arst_n),
-         .din     (mem_write),
+         .din     (control_output[3]),
          .en      (enable),
          .dout    (mem_write_ID_EX)
       );

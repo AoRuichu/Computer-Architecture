@@ -1,5 +1,4 @@
 // Module: immediate extend unit
-
 module immediate_extend_unit(
     input wire [31:0] instruction,
     output reg [63:0] immediate_extended

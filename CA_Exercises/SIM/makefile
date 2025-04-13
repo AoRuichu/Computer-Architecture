@@ -16,3 +16,7 @@ sim:
 sim_gui:
 	clear;
 	xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui &
+
+sim_mult4:
+	clear;
+	xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -input restore.tcl
