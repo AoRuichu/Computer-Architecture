@@ -11,8 +11,8 @@ all: clean sim
 ###########	
 sim:
 	clear;
-	xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition
+	xrun +sv -64bit -f files_verilog_MULT2.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition
 
 sim_gui:
 	clear;
-	xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui &
+	xrun +sv -64bit -f files_verilog_MULT2.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui &

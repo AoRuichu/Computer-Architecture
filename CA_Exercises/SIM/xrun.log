@@ -1,72 +1,61 @@
 xrun(64): 23.03-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.03-s002: Started on Apr 04, 2025 at 15:23:04 CEST
+TOOL:	xrun(64)	23.03-s002: Started on Apr 13, 2025 at 17:45:27 CEST
 xrun
 	+sv
 	-64bit
-	-f files_verilog.f
-		../Verilog/RTL/alu.v
-		../Verilog/RTL/alu_control.v
-		../Verilog/RTL/branch_unit.v
-		../Verilog/RTL/control_unit.v
-		../Verilog/RTL/cpu.v
-		../Verilog/RTL/immediate_extend_unit.v
-		../Verilog/RTL/mux_2.v
-		../Verilog/RTL/mux_3.v
-		../Verilog/RTL/foward_unit.v
-		../Verilog/RTL/pc.v
-		../Verilog/RTL/register_file.v
-		../Verilog/RTL/reg_arstn.v
-		../Verilog/RTL/reg_arstn_en.v
-		../Verilog/RTL/sram.v
+	-f files_verilog_MULT2.f
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu_control.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/branch_unit.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/control_unit.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/cpu.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/immediate_extend_unit.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/mux_2.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/pc.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/register_file.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn_en.v
+		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/sram.v
 		../Verilog/cpu_tb.v
 		../Verilog/sky130_sram_2rw.v
 	-top cpu_tb
 	-timescale 1ns/10ps
 	-access +rwc
 	-allowredefinition
-file: ../Verilog/RTL/alu.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu.v
 	module worklib.alu:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/alu_control.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu_control.v
 	module worklib.alu_control:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/branch_unit.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/branch_unit.v
 	module worklib.branch_unit:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/control_unit.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/control_unit.v
 	module worklib.control_unit:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/cpu.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/cpu.v
 	module worklib.cpu:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/immediate_extend_unit.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/immediate_extend_unit.v
 	module worklib.immediate_extend_unit:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/mux_2.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/mux_2.v
 	module worklib.mux_2:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/mux_3.v
-	module worklib.mux_3:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL/foward_unit.v
-	module worklib.foward_unit:v
-		errors: 0, warnings: 0
-endmodule;
-         |
-xmvlog: *W,UEXPSC (../Verilog/RTL/foward_unit.v,45|9): Ignored unexpected semicolon following SystemVerilog description keyword (endmodule).
-file: ../Verilog/RTL/pc.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/pc.v
 	module worklib.pc:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/register_file.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/register_file.v
 	module worklib.register_file:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/reg_arstn.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn.v
 	module worklib.reg_arstn:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/reg_arstn_en.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn_en.v
 	module worklib.reg_arstn_en:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL/sram.v
+file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/sram.v
 	module worklib.sram_BW32:v
 		errors: 0, warnings: 0
 	module worklib.sram_BW64:v
@@ -79,69 +68,51 @@ file: ../Verilog/sky130_sram_2rw.v
 		errors: 0, warnings: 0
 	module worklib.sky130_sram_2rw_64x128_64:v
 		errors: 0, warnings: 0
-	Total errors/warnings found outside modules and primitives:
-		errors: 0, warnings: 1
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
 	Top level design units:
 		cpu_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.sky130_sram_2rw_64x128_64:v <0x45806777>
-			streams:   4, words:  3138
-		worklib.foward_unit:v <0x65b26b2a>
-			streams:   1, words:  1603
-		worklib.branch_unit:v <0x30ac35df>
+		worklib.branch_unit:v <0x16f4c75f>
 			streams:   1, words:   596
-		worklib.alu:v <0x31974ab9>
+		worklib.alu:v <0x48d886dc>
 			streams:   6, words:  5703
-		worklib.mux_3:v <0x4e7bc06c>
-			streams:   1, words:   808
-		worklib.alu_control:v <0x77627927>
+		worklib.alu_control:v <0x3f57408c>
 			streams:   3, words:   991
-		worklib.reg_arstn_en:v <0x4bc54600>
-			streams:   3, words:   823
-		worklib.reg_arstn_en:v <0x0a346627>
-			streams:   3, words:   823
-		worklib.reg_arstn_en:v <0x3692c586>
-			streams:   3, words:   823
-		worklib.reg_arstn_en:v <0x663264ae>
-			streams:   3, words:   823
-		worklib.reg_arstn_en:v <0x34b51d9e>
-			streams:   3, words:   844
-		worklib.immediate_extend_unit:v <0x3346336b>
-			streams:   2, words:  3323
-		worklib.control_unit:v <0x0b8daafe>
+		worklib.control_unit:v <0x3bd746c0>
 			streams:   1, words:  8157
-		worklib.reg_arstn_en:v <0x2cb7dc81>
-			streams:   3, words:   810
-		worklib.sky130_sram_2rw_32x128_32:v <0x72da8990>
+		worklib.sky130_sram_2rw_64x128_64:v <0x4036fd0a>
+			streams:   4, words:  3138
+		worklib.sky130_sram_2rw_32x128_32:v <0x6828e501>
 			streams:   6, words:  3445
-		worklib.reg_arstn_en:v <0x3b0da03d>
+		worklib.reg_arstn_en:v <0x2ea3faf3>
 			streams:   3, words:  1151
-		worklib.mux_2:v <0x4e8d3e59>
+		worklib.mux_2:v <0x07ba44a5>
 			streams:   1, words:   531
-		worklib.pc:v <0x15a7f924>
+		worklib.pc:v <0x7d9caf66>
 			streams:   5, words:  1642
-		worklib.cpu_tb:v <0x45dec2a3>
+		worklib.immediate_extend_unit:v <0x6db2d429>
+			streams:   2, words:  3323
+		worklib.cpu_tb:v <0x3bd71781>
 			streams:  27, words: 57100
-		worklib.sram_BW32:v <0x0bbea501>
+		worklib.sram_BW32:v <0x587f25a0>
 			streams:  10, words:  4764
-		worklib.sram_BW64:v <0x5279fdd0>
+		worklib.sram_BW64:v <0x14d93e56>
 			streams:  10, words:  4974
-		worklib.register_file:v <0x1a6882e1>
+		worklib.register_file:v <0x5d56557d>
 			streams:   5, words: 27650
-		worklib.cpu:v <0x1fca344e>
-			streams:   2, words:  1158
+		worklib.cpu:v <0x2e461f70>
+			streams:   2, words:   946
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
-		Modules:                 57      17
-		Registers:              180     104
-		Scalar wires:            47       -
-		Vectored wires:          72       -
-		Always blocks:          115      39
+		Modules:                 18      15
+		Registers:              104     101
+		Scalar wires:            31       -
+		Vectored wires:          45       -
+		Always blocks:           40      37
 		Initial blocks:           3       3
 		Cont. assignments:        2       4
 		Pseudo assignments:      30       -
@@ -154,10 +125,10 @@ xcelium> run
 Start Execution
 
 [1;34m
-Mult3 Working Correctly
+Mult2 Working Correctly
 [0m
-         25 cycles
-Simulation complete via $finish(1) at time 30950 NS + 8
+         40 cycles
+Simulation complete via $finish(1) at time 32450 NS + 8
 ../Verilog/cpu_tb.v:341    $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.03-s002: Exiting on Apr 04, 2025 at 15:23:05 CEST  (total: 00:00:01)
+TOOL:	xrun(64)	23.03-s002: Exiting on Apr 13, 2025 at 17:45:29 CEST  (total: 00:00:02)

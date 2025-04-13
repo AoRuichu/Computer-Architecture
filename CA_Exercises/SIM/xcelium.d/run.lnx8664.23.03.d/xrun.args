@@ -5,7 +5,7 @@
 +sv
 -64bit
 -f
-files_verilog.f
+files_verilog_MULT2.f
 -top
 cpu_tb
 -timescale
