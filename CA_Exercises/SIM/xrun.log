@@ -1,61 +1,61 @@
 xrun(64): 23.03-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	23.03-s002: Started on Apr 13, 2025 at 17:45:27 CEST
+TOOL:	xrun(64)	23.03-s002: Started on Apr 13, 2025 at 18:46:17 CEST
 xrun
 	+sv
 	-64bit
-	-f files_verilog_MULT2.f
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu_control.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/branch_unit.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/control_unit.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/cpu.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/immediate_extend_unit.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/mux_2.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/pc.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/register_file.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn_en.v
-		../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/sram.v
+	-f files_verilog_MULT2_pipelined.f
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu_control.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/branch_unit.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/control_unit.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/cpu.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/immediate_extend_unit.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/mux_2.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/pc.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/register_file.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn_en.v
+		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/sram.v
 		../Verilog/cpu_tb.v
 		../Verilog/sky130_sram_2rw.v
 	-top cpu_tb
 	-timescale 1ns/10ps
 	-access +rwc
 	-allowredefinition
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu.v
 	module worklib.alu:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu_control.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu_control.v
 	module worklib.alu_control:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/branch_unit.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/branch_unit.v
 	module worklib.branch_unit:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/control_unit.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/control_unit.v
 	module worklib.control_unit:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/cpu.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/cpu.v
 	module worklib.cpu:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/immediate_extend_unit.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/immediate_extend_unit.v
 	module worklib.immediate_extend_unit:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/mux_2.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/mux_2.v
 	module worklib.mux_2:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/pc.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/pc.v
 	module worklib.pc:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/register_file.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/register_file.v
 	module worklib.register_file:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn.v
 	module worklib.reg_arstn:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn_en.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn_en.v
 	module worklib.reg_arstn_en:v
 		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION2_multiplication_support_MULT2/sram.v
+file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/sram.v
 	module worklib.sram_BW32:v
 		errors: 0, warnings: 0
 	module worklib.sram_BW64:v
@@ -74,45 +74,57 @@ file: ../Verilog/sky130_sram_2rw.v
 		cpu_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.branch_unit:v <0x16f4c75f>
-			streams:   1, words:   596
-		worklib.alu:v <0x48d886dc>
-			streams:   6, words:  5703
-		worklib.alu_control:v <0x3f57408c>
-			streams:   3, words:   991
-		worklib.control_unit:v <0x3bd746c0>
-			streams:   1, words:  8157
 		worklib.sky130_sram_2rw_64x128_64:v <0x4036fd0a>
 			streams:   4, words:  3138
+		worklib.branch_unit:v <0x4cacb95a>
+			streams:   1, words:   596
+		worklib.alu:v <0x5144360f>
+			streams:   6, words:  5703
+		worklib.alu_control:v <0x46168cb2>
+			streams:   3, words:   991
+		worklib.reg_arstn_en:v <0x3c0eb00a>
+			streams:   3, words:   823
+		worklib.reg_arstn_en:v <0x7dff902d>
+			streams:   3, words:   823
+		worklib.reg_arstn_en:v <0x4159338c>
+			streams:   3, words:   823
+		worklib.reg_arstn_en:v <0x11f992a4>
+			streams:   3, words:   823
+		worklib.reg_arstn_en:v <0x437eeb94>
+			streams:   3, words:   844
+		worklib.immediate_extend_unit:v <0x14654ef3>
+			streams:   2, words:  3323
+		worklib.control_unit:v <0x09a8c2da>
+			streams:   1, words:  8157
+		worklib.reg_arstn_en:v <0x5b7c2a8b>
+			streams:   3, words:   810
 		worklib.sky130_sram_2rw_32x128_32:v <0x6828e501>
 			streams:   6, words:  3445
-		worklib.reg_arstn_en:v <0x2ea3faf3>
+		worklib.reg_arstn_en:v <0x4cc65637>
 			streams:   3, words:  1151
-		worklib.mux_2:v <0x07ba44a5>
+		worklib.mux_2:v <0x18fca986>
 			streams:   1, words:   531
-		worklib.pc:v <0x7d9caf66>
+		worklib.pc:v <0x423cf4b4>
 			streams:   5, words:  1642
-		worklib.immediate_extend_unit:v <0x6db2d429>
-			streams:   2, words:  3323
-		worklib.cpu_tb:v <0x3bd71781>
+		worklib.cpu_tb:v <0x36fc2fb9>
 			streams:  27, words: 57100
-		worklib.sram_BW32:v <0x587f25a0>
+		worklib.sram_BW32:v <0x106946c3>
 			streams:  10, words:  4764
-		worklib.sram_BW64:v <0x14d93e56>
+		worklib.sram_BW64:v <0x182fe108>
 			streams:  10, words:  4974
-		worklib.register_file:v <0x5d56557d>
+		worklib.register_file:v <0x4cba84ed>
 			streams:   5, words: 27650
-		worklib.cpu:v <0x2e461f70>
-			streams:   2, words:   946
+		worklib.cpu:v <0x069c2065>
+			streams:   2, words:   940
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
-		Modules:                 18      15
-		Registers:              104     101
-		Scalar wires:            31       -
-		Vectored wires:          45       -
-		Always blocks:           40      37
+		Modules:                 52      15
+		Registers:              172     101
+		Scalar wires:            47       -
+		Vectored wires:          64       -
+		Always blocks:          108      37
 		Initial blocks:           3       3
 		Cont. assignments:        2       4
 		Pseudo assignments:      30       -
@@ -131,4 +143,4 @@ Mult2 Working Correctly
 Simulation complete via $finish(1) at time 32450 NS + 8
 ../Verilog/cpu_tb.v:341    $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.03-s002: Exiting on Apr 13, 2025 at 17:45:29 CEST  (total: 00:00:02)
+TOOL:	xrun(64)	23.03-s002: Exiting on Apr 13, 2025 at 18:46:18 CEST  (total: 00:00:01)

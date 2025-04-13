@@ -40,3 +40,6 @@ s39(13Apr2025:17:04:35):  xrun +sv -64bit -f files_verilog_MULT1.f -top cpu_tb -
 s40(13Apr2025:17:35:12):  xrun +sv -64bit -f files_verilog_MULT1.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition 
 s41(13Apr2025:17:44:49):  xrun +sv -64bit -f files_verilog_MULT2.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition 
 s42(13Apr2025:17:45:27):  xrun +sv -64bit -f files_verilog_MULT2.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition 
+s43(13Apr2025:18:26:36):  xrun +sv -64bit -f files_verilog_MULT2_pipelined.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition 
+s44(13Apr2025:18:29:29):  xrun +sv -64bit -f files_verilog_MULT2_pipelined.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui 
+s45(13Apr2025:18:46:17):  xrun +sv -64bit -f files_verilog_MULT2_pipelined.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition 

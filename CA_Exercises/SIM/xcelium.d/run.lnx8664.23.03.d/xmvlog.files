@@ -2,17 +2,17 @@
 // File created by:  xrun
 // Do not modify this file
 //
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/alu_control.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/branch_unit.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/control_unit.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/cpu.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/immediate_extend_unit.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/mux_2.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/pc.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/register_file.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn_en.v
-/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/sram.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu_control.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/branch_unit.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/control_unit.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/cpu.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/immediate_extend_unit.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/mux_2.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/pc.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/register_file.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn_en.v
+/users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/sram.v
 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/cpu_tb.v
 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/sky130_sram_2rw.v

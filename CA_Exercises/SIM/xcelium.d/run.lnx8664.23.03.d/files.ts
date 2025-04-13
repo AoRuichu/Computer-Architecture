@@ -24,3 +24,15 @@
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn.v
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/reg_arstn_en.v
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/sram.v
+1743582013 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu.v
+1743582013 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu_control.v
+1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/branch_unit.v
+1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/control_unit.v
+1744549238 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/cpu.v
+1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/immediate_extend_unit.v
+1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/mux_2.v
+1744549238 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/pc.v
+1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/register_file.v
+1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn.v
+1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn_en.v
+1741161291 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/sram.v
