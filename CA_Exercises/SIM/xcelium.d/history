@@ -2,6 +2,4 @@
 // File created by:  xrun
 // Do not modify this file
 
-s1::(14Apr2025:15:42:49):( xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition )
-s2::(14Apr2025:15:49:12):( xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition )
-s3::(14Apr2025:15:51:36):( xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition )
+s1::(14Apr2025:17:09:06):( xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition )

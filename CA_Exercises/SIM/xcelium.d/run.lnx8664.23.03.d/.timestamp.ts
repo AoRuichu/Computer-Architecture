@@ -1,12 +1,12 @@
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/alu.v
 1744636231 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/register_file.v
-1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/foward_unit.v
+1744641000 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/foward_unit.v
 1744636231 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/harzard_detect_unit.v
 1744636231 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/control_unit.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/alu_control.v
 1744565122 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/cpu_tb.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/reg_arstn.v
-1744636231 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/cpu.v
+1744641020 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/cpu.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/mux_3.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/mux_2.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/pc.v

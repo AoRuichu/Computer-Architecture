@@ -1,4 +1,7 @@
-CA_Exercises/SIM/*
-!CA_Exercises/SIM/*.f
+SIM/*
+!SIM/*.f
+!SIM/makefile
+!SIM/data/
+
 .ipynb_checkpoints
 *runs*

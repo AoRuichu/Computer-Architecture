@@ -7,12 +7,14 @@ clean:
 all: clean sim
 
 ###########
-# simulation MULT2 hazard#
+# simulation MULT3 :mult2 with data hazard solution#
 ###########	
 sim:
 	clear;
 	xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition 
-## -linedebug -input restore.tcl
+sim_gui:
+	clear;
+	xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui &
 
 ###########
 # simulation MULT1#
@@ -45,4 +47,15 @@ sim2p:
 sim_gui2p:
 	clear;
 	xrun +sv -64bit -f files_verilog_MULT2_pipelined.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui &
+
+###########
+# simulation MULT3 :mult2 with data hazard solution#
+###########	
+sim3:
+	clear;
+	xrun +sv -64bit -f files_verilog_MULT3.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition 
+
+sim_gui3:
+	clear;
+	xrun +sv -64bit -f files_verilog_MULT3.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui &
 
