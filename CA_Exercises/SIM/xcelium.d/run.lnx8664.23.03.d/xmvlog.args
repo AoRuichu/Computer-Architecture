@@ -20,6 +20,7 @@
 ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/sram.v
 ../Verilog/cpu_tb.v
 ../Verilog/sky130_sram_2rw.v
+../Verilog/RTL/harzard_detect_unit.v
 -ALLOWREDEFINITION
 -CDSLIB
 ./xcelium.d/run.lnx8664.23.03.d/cdsrun.lib

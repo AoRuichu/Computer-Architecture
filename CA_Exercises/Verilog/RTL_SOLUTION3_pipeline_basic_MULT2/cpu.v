@@ -74,9 +74,9 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       .arst_n    (arst_n    ),
       .branch_pc (branch_pc_EX_MEM ),
       .jump_pc   (jump_pc_EX_MEM   ),
-      .zero_flag (zero_flag ),
-      .branch    (branch    ),
-      .jump      (jump      ),
+      .zero_flag (zero_flag_EX_MEM ),
+      .branch    (branch_EX_MEM    ),
+      .jump      (jump_EX_MEM      ),
       .current_pc(current_pc),
       .enable    (enable    ),
       .updated_pc(updated_pc)

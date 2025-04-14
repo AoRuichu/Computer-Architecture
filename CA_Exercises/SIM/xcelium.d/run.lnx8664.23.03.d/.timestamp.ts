@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/control_unit.v
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION1_simple_program_and_MULT1/immediate_extend_unit.v
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION1_simple_program_and_MULT1/reg_arstn.v
@@ -52,3 +53,22 @@
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/branch_unit.v
 1743576811 /users/students/r0926826/kuleuven/6/ca/Computer-Architecture/CA_Exercises/Verilog/RTL_SOLUTION2_multiplication_support_MULT2/control_unit.v
 1743596756 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/immediate_extend_unit.v
+=======
+1744558489 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/reg_arstn_en.v
+1741156226 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/cpu_tb.v
+1744558488 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/harzard_detect_unit.v
+1744558489 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/sram.v
+1744558488 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/foward_unit.v
+1744558489 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/pc.v
+1744563927 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/cpu.v
+1744558488 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/alu_control.v
+1744558489 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/mux_3.v
+1744558488 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/mux_2.v
+1744558489 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/reg_arstn.v
+1744558489 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/register_file.v
+1744558488 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/alu.v
+1744558488 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/control_unit.v
+1744558488 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/branch_unit.v
+1741156226 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/sky130_sram_2rw.v
+1744562146 /users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/Verilog/RTL/immediate_extend_unit.v
+>>>>>>> origin/s2_with_test
