@@ -7,11 +7,7 @@
 +EMGRLOG
 xrun.log
 -XLSTIME
-<<<<<<< HEAD
-1744562777
-=======
-1744567035
->>>>>>> origin/s2_with_test
+1744638696
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx8664.23.03.d
@@ -25,8 +21,4 @@ xrun
 -XLVERSION
 "TOOL:	xrun(64)	23.03-s002"
 -XLNAME
-<<<<<<< HEAD
-./xcelium.d/run.lnx8664.23.03.d/pc-klas2-12.esat.kuleuven.be_57500
-=======
-./xcelium.d/run.lnx8664.23.03.d/pc-klas2-11.esat.kuleuven.be_98152
->>>>>>> origin/s2_with_test
+./xcelium.d/run.lnx8664.23.03.d/pc-klas2-12.esat.kuleuven.be_29235

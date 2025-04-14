@@ -34,6 +34,7 @@ module control_unit(
       case(opcode)
          ALU_R:begin
             alu_src   = 1'b0;
+            reg_dst   = 1'b0;
             mem_2_reg = 1'b0;
             reg_write = 1'b1;
             mem_read  = 1'b0;
@@ -45,6 +46,7 @@ module control_unit(
 
          ALU_I:begin
             alu_src   = 1'b1;
+            reg_dst   = 1'b0;
             mem_2_reg = 1'b0;
             reg_write = 1'b1;
             mem_read  = 1'b0;
@@ -56,6 +58,7 @@ module control_unit(
 
          BRANCH_EQ:begin
             alu_src   = 1'b0;
+            reg_dst   = 1'b0;
             mem_2_reg = 1'b0;
             reg_write = 1'b0;
             mem_read  = 1'b0;
@@ -67,6 +70,7 @@ module control_unit(
 
          JUMP:begin
             alu_src   = 1'b0;
+            reg_dst   = 1'b0;
             mem_2_reg = 1'b0;
             reg_write = 1'b0;
             mem_read  = 1'b0;
@@ -78,6 +82,7 @@ module control_unit(
 
          LOAD:begin
             alu_src   = 1'b1;
+            reg_dst   = 1'b0;
             mem_2_reg = 1'b1;
             reg_write = 1'b1;
             mem_read  = 1'b1;
@@ -89,6 +94,7 @@ module control_unit(
 
          STORE:begin
             alu_src   = 1'b1;
+            reg_dst   = 1'b0;
             mem_2_reg = 1'b1;
             reg_write = 1'b0;
             mem_read  = 1'b0;
@@ -103,6 +109,7 @@ module control_unit(
 
          default:begin
             alu_src   = 1'b0;
+            reg_dst   = 1'b0;
             mem_2_reg = 1'b0;
             reg_write = 1'b0;
             mem_read  = 1'b0;

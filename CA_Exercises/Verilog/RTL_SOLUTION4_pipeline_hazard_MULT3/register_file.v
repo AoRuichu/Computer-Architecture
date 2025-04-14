@@ -37,7 +37,14 @@ module register_file#(
 
 
    always@(*) begin
+      if(waddr == raddr_1)
+         rdata_1 = wdata;
+      else
          rdata_1 = reg_array[raddr_1];
+
+      if(waddr == raddr_2)
+         rdata_2 = wdata;
+      else
          rdata_2 = reg_array[raddr_2];
    end
 

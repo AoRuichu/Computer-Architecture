@@ -1,25 +1,23 @@
 xrun(64): 23.03-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-<<<<<<< HEAD
-TOOL:	xrun(64)	23.03-s002: Started on Apr 13, 2025 at 18:46:17 CEST
-=======
-TOOL:	xrun(64)	23.03-s002: Started on Apr 13, 2025 at 19:57:15 CEST
->>>>>>> origin/s2_with_test
+TOOL:	xrun(64)	23.03-s002: Started on Apr 14, 2025 at 15:51:36 CEST
 xrun
 	+sv
 	-64bit
-	-f files_verilog_MULT2_pipelined.f
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu_control.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/branch_unit.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/control_unit.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/cpu.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/immediate_extend_unit.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/mux_2.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/pc.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/register_file.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn_en.v
-		../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/sram.v
+	-f files_verilog.f
+		../Verilog/RTL/alu.v
+		../Verilog/RTL/alu_control.v
+		../Verilog/RTL/branch_unit.v
+		../Verilog/RTL/control_unit.v
+		../Verilog/RTL/cpu.v
+		../Verilog/RTL/immediate_extend_unit.v
+		../Verilog/RTL/mux_2.v
+		../Verilog/RTL/mux_3.v
+		../Verilog/RTL/foward_unit.v
+		../Verilog/RTL/pc.v
+		../Verilog/RTL/register_file.v
+		../Verilog/RTL/reg_arstn.v
+		../Verilog/RTL/reg_arstn_en.v
+		../Verilog/RTL/sram.v
 		../Verilog/cpu_tb.v
 		../Verilog/sky130_sram_2rw.v
 		../Verilog/RTL/harzard_detect_unit.v
@@ -27,158 +25,6 @@ xrun
 	-timescale 1ns/10ps
 	-access +rwc
 	-allowredefinition
-<<<<<<< HEAD
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu.v
-=======
-xrun: *W,WKWTLK: Waiting for a Exclusive lock on file '/users/students/r0927191/ComputerArchitecture/CA_Exercise_2025/CA_Exercises/SIM/xcelium.d/run.lnx8664.23.03.d/.xmlib.lock'. pid:98152.
-file: ../Verilog/RTL/alu.v
->>>>>>> origin/s2_with_test
-	module worklib.alu:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/alu_control.v
-	module worklib.alu_control:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/branch_unit.v
-	module worklib.branch_unit:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/control_unit.v
-	module worklib.control_unit:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/cpu.v
-	module worklib.cpu:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/immediate_extend_unit.v
-	module worklib.immediate_extend_unit:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/mux_2.v
-	module worklib.mux_2:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/pc.v
-	module worklib.pc:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/register_file.v
-	module worklib.register_file:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn.v
-	module worklib.reg_arstn:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/reg_arstn_en.v
-	module worklib.reg_arstn_en:v
-		errors: 0, warnings: 0
-file: ../Verilog/RTL_SOLUTION3_pipeline_basic_MULT2/sram.v
-	module worklib.sram_BW32:v
-		errors: 0, warnings: 0
-	module worklib.sram_BW64:v
-		errors: 0, warnings: 0
-file: ../Verilog/cpu_tb.v
-	module worklib.cpu_tb:v
-		errors: 0, warnings: 0
-file: ../Verilog/sky130_sram_2rw.v
-	module worklib.sky130_sram_2rw_32x128_32:v
-		errors: 0, warnings: 0
-	module worklib.sky130_sram_2rw_64x128_64:v
-		errors: 0, warnings: 0
-<<<<<<< HEAD
-=======
-file: ../Verilog/RTL/harzard_detect_unit.v
-	module worklib.harzard_detect_unit:v
-		errors: 0, warnings: 0
-	Total errors/warnings found outside modules and primitives:
-		errors: 0, warnings: 1
->>>>>>> origin/s2_with_test
-	Elaborating the design hierarchy:
-		Caching library 'worklib' ....... Done
-	Top level design units:
-		cpu_tb
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.sky130_sram_2rw_64x128_64:v <0x4036fd0a>
-			streams:   4, words:  3138
-		worklib.branch_unit:v <0x4cacb95a>
-			streams:   1, words:   596
-		worklib.alu:v <0x5144360f>
-			streams:   6, words:  5703
-		worklib.alu_control:v <0x46168cb2>
-			streams:   3, words:   991
-		worklib.reg_arstn_en:v <0x3c0eb00a>
-			streams:   3, words:   823
-		worklib.reg_arstn_en:v <0x7dff902d>
-			streams:   3, words:   823
-		worklib.reg_arstn_en:v <0x4159338c>
-			streams:   3, words:   823
-		worklib.reg_arstn_en:v <0x11f992a4>
-			streams:   3, words:   823
-		worklib.reg_arstn_en:v <0x437eeb94>
-			streams:   3, words:   844
-<<<<<<< HEAD
-		worklib.immediate_extend_unit:v <0x14654ef3>
-			streams:   2, words:  3323
-		worklib.control_unit:v <0x09a8c2da>
-			streams:   1, words:  8157
-		worklib.reg_arstn_en:v <0x5b7c2a8b>
-=======
-		worklib.harzard_detect_unit:v <0x39d54a16>
-			streams:   1, words:  1041
-		worklib.immediate_extend_unit:v <0x3346336b>
-			streams:   2, words:  3323
-		worklib.mux_2:v <0x01542804>
-			streams:   1, words:   383
-		worklib.control_unit:v <0x361926fd>
-			streams:   1, words:  9053
-		worklib.reg_arstn_en:v <0x2cb7dc81>
->>>>>>> origin/s2_with_test
-			streams:   3, words:   810
-		worklib.sky130_sram_2rw_32x128_32:v <0x6828e501>
-			streams:   6, words:  3445
-		worklib.reg_arstn_en:v <0x4cc65637>
-			streams:   3, words:  1151
-		worklib.mux_2:v <0x18fca986>
-			streams:   1, words:   531
-		worklib.pc:v <0x423cf4b4>
-			streams:   5, words:  1642
-<<<<<<< HEAD
-		worklib.cpu_tb:v <0x36fc2fb9>
-=======
-		worklib.cpu_tb:v <0x4bb12046>
->>>>>>> origin/s2_with_test
-			streams:  27, words: 57100
-		worklib.sram_BW32:v <0x106946c3>
-			streams:  10, words:  4764
-		worklib.sram_BW64:v <0x182fe108>
-			streams:  10, words:  4974
-<<<<<<< HEAD
-		worklib.register_file:v <0x4cba84ed>
-			streams:   5, words: 27650
-		worklib.cpu:v <0x069c2065>
-			streams:   2, words:   940
-=======
-		worklib.register_file:v <0x40ab41df>
-			streams:   5, words: 28223
-		worklib.cpu:v <0x33548c4d>
-			streams:   8, words:  3678
->>>>>>> origin/s2_with_test
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		                  Instances  Unique
-<<<<<<< HEAD
-		Modules:                 52      15
-		Registers:              172     101
-		Scalar wires:            47       -
-		Vectored wires:          64       -
-		Always blocks:          108      37
-=======
-		Modules:                 59      18
-		Registers:              186     109
-		Scalar wires:            60       -
-		Vectored wires:          78       -
-		Always blocks:          118      41
->>>>>>> origin/s2_with_test
-		Initial blocks:           3       3
-		Cont. assignments:        2       4
-		Pseudo assignments:      35       -
-		Simulation timescale:  10ps
-	Writing initial simulation snapshot: worklib.cpu_tb:v
 Loading snapshot worklib.cpu_tb:v .................... Done
 xcelium> source /esat/micas-data/software/Cadence/xcelium_23.03/tools/xcelium/files/xmsimrc
 xcelium> run
@@ -186,20 +32,10 @@ xcelium> run
 Start Execution
 
 [1;34m
-<<<<<<< HEAD
-Mult2 Working Correctly
+Mult3 Working Correctly
 [0m
-         40 cycles
-Simulation complete via $finish(1) at time 32450 NS + 8
+         26 cycles
+Simulation complete via $finish(1) at time 31050 NS + 8
 ../Verilog/cpu_tb.v:341    $finish;
 xcelium> exit
-TOOL:	xrun(64)	23.03-s002: Exiting on Apr 13, 2025 at 18:46:18 CEST  (total: 00:00:01)
-=======
-Mult4 Working Correctly
-[0m
-       2434 cycles
-Simulation complete via $finish(1) at time 279260 NS + 0
-../Verilog/cpu_tb.v:341    $finish;
-xcelium> exit
-TOOL:	xrun(64)	23.03-s002: Exiting on Apr 13, 2025 at 19:57:38 CEST  (total: 00:00:23)
->>>>>>> origin/s2_with_test
+TOOL:	xrun(64)	23.03-s002: Exiting on Apr 14, 2025 at 15:51:37 CEST  (total: 00:00:01)

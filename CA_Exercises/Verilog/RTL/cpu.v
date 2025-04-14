@@ -438,6 +438,7 @@ branch_unit#(
    .jump_pc            (jump_pc                 )
 );
 
+wire reg_write_EX_MEM;
 foward_unit u_foward_unit(
    .ID_EX_Rs1        	(rds1_ID_EX           ),
    .ID_EX_Rs2        	(rds2_ID_EX           ),
@@ -604,7 +605,7 @@ sram_BW64 #(
 // MEM STAGE END --------------------------------------------
 
 // MEM_WB REG BEGIN ==========================================
-
+      wire mem_2_reg_MEM_WB;
       reg_arstn_en#(
          .DATA_W(1)
       )mem_2_reg_pipe_MEM_WB(

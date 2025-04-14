@@ -42,4 +42,4 @@ module foward_unit(
                 end
         end
 
-endmodule;
+endmodule

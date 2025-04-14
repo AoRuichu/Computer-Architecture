@@ -1,3 +1,4 @@
-SIM/
+CA_Exercises/SIM/*
+!CA_Exercises/SIM/*.f
 .ipynb_checkpoints
 *runs*
