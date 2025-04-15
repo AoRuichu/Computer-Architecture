@@ -36,7 +36,9 @@ module cpu(
 
    );
 
-wire              zero_flag,zero_flag_EX_MEM;
+
+
+wire              zero_flag,zero_flag_EX_MEM,zero_flag_ID;
 wire [      63:0] branch_pc,branch_pc_EX_MEM,
                   updated_pc,
                   current_pc,current_pc_IF_ID, current_pc_ID_EX,
@@ -77,11 +79,11 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
    ) program_counter (
       .clk       (clk       ),
       .arst_n    (arst_n    ),
-      .branch_pc (branch_pc_EX_MEM ),
-      .jump_pc   (jump_pc_EX_MEM   ),
-      .zero_flag (zero_flag_EX_MEM ),
-      .branch    (branch_EX_MEM    ),
-      .jump      (jump_EX_MEM      ),
+      .branch_pc (branch_pc ),
+      .jump_pc   (jump_pc   ),
+      .zero_flag (zero_flag_ID ),
+      .branch    (branch    ),
+      .jump      (jump      ),
       .current_pc(current_pc),
       .enable    (enable&&PC_write ),
       .updated_pc(updated_pc)
@@ -104,6 +106,8 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       .rdata_ext(rdata_ext     )
    );
 // IF STAGE END  --------------------------------
+wire flush_IF_ID;
+assign flush_IF_ID = branch && zero_flag_ID;
 
 // IF_ID REG BEGIN ======================
 
@@ -113,7 +117,7 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
    )signal_pipe_IF_ID(
       .clk     (clk),
       .arst_n  (arst_n),
-      .din     (instruction),
+      .din     (flush_IF_ID ? 32'b0 : instruction),
       .en      (enable&&IF_ID_write),
       .dout    (instruction_IF_ID)
    );
@@ -190,6 +194,15 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       .control_write  (control_write)
    );
    
+assign zero_flag_ID = (regfile_rdata_1 == regfile_rdata_2);
+branch_unit#(
+   .DATA_W(64)
+)branch_unit(
+   .current_pc         (current_pc_IF_ID       ),
+   .immediate_extended (immediate_extended),
+   .branch_pc          (branch_pc               ),
+   .jump_pc            (jump_pc                 )
+);
 
 // ID STAGE END -------------------------------
 
@@ -429,14 +442,7 @@ mux_2 #(
    .mux_out (alu_operand_2  )
 );
 
-branch_unit#(
-   .DATA_W(64)
-)branch_unit(
-   .current_pc         (current_pc_ID_EX        ),
-   .immediate_extended (immediate_extended_ID_EX),
-   .branch_pc          (branch_pc               ),
-   .jump_pc            (jump_pc                 )
-);
+
 
 wire reg_write_EX_MEM;
 foward_unit u_foward_unit(
@@ -672,6 +678,7 @@ mux_2 #(
 
 
 // WB STAGE END ------------------------------------------
+
 endmodule
 
 
