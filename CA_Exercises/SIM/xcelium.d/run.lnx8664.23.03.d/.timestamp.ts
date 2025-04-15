@@ -6,7 +6,7 @@
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/alu_control.v
 1744565122 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/cpu_tb.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/reg_arstn.v
-1744727992 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/cpu.v
+1744738144 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/cpu.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/mux_3.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/mux_2.v
 1744565121 /esat/studscratch/r0926826/ca/Computer-Architecture/CA_Exercises/Verilog/RTL/pc.v

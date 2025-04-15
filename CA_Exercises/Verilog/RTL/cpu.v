@@ -106,8 +106,9 @@ wire signed [63:0] immediate_extended,immediate_extended_ID_EX;
       .rdata_ext(rdata_ext     )
    );
 // IF STAGE END  --------------------------------
-wire flush_IF_ID;
-assign flush_IF_ID = branch && zero_flag_ID;
+wire flush_IF_ID,jumpOrBranch;
+assign flush_IF_ID = jumpOrBranch && zero_flag_ID;
+assign jumpOrBranch = branch || jump;
 
 // IF_ID REG BEGIN ======================
 
