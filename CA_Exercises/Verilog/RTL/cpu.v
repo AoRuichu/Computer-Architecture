@@ -196,6 +196,7 @@ assign jumpOrBranch = branch || jump;
    );
    
 assign zero_flag_ID = (regfile_rdata_1 == regfile_rdata_2);
+
 branch_unit#(
    .DATA_W(64)
 )branch_unit(
