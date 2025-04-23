@@ -15,7 +15,6 @@ sim:
 sim_gui:
 	clear;
 	xrun +sv -64bit -f files_verilog.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui &
-
 ###########
 # simulation MULT1#
 ###########	
@@ -59,3 +58,7 @@ sim_gui3:
 	clear;
 	xrun +sv -64bit -f files_verilog_MULT3.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition -linedebug -gui &
 
+sim_gtk3:
+	clear;
+	xrun +sv -64bit -f files_verilog_MULT3.f -top cpu_tb -timescale 1ns/10ps -access +rwc -allowredefinition 
+	gtkwave vcd_dump.vcd &
